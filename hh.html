@@ -1,0 +1,47 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>带调色板的纯色网页</title>  
+    <style>  
+        body {  
+            margin: 0;  
+            padding: 0;  
+            background-color: #99f8ff; /* 初始背景颜色 */  
+        }  
+  
+        .color-picker {  
+            position: fixed;  
+            bottom: 20px;  
+            right: 20px;  
+            background-color: #fff;  
+            border: 1px solid #ccc;  
+            padding: 10px;  
+            border-radius: 5px;  
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+            z-index: 100;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <!-- 调色板容器 -->  
+    <div class="color-picker">  
+        <input type="color" id="colorPicker" value="#002b49">  
+    </div>  
+  
+    <script>  
+        // 获取调色板输入元素  
+        var colorPicker = document.getElementById('colorPicker');  
+  
+        // 监听调色板输入的变化  
+        colorPicker.addEventListener('input', function() {  
+            // 获取选中的颜色值  
+            var color = this.value;  
+  
+            // 设置body的背景颜色  
+            document.body.style.backgroundColor = color;  
+        });  
+    </script>  
+</body>  
+</html>
